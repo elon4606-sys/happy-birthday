@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Happy Birthday Mama ❤️</title>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #fdf8f5;
+        overflow-x: hidden;
+        color: #333;
+      }
+
+      /* BACKGROUND */
+      .bg {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background:
+          radial-gradient(circle at top left, #ffd6e7, transparent 25%),
+          radial-gradient(circle at bottom right, #ffe7c7, transparent 25%),
+          #fdf8f5;
+        z-index: -2;
+      }
+
+      /* HERO */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        padding: 60px 10%;
+        flex-wrap: wrap;
+      }
+
+      .hero-text {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .hero-text h3 {
+        color: #d67c9b;
+        letter-spacing: 4px;
+        margin-bottom: 15px;
+        font-size: 0.95rem;
+      }
+
+      .hero-text h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 4.5rem;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        color: #2d2d2d;
+      }
+
+      .hero-text h1 span {
+        color: #d67c9b;
+      }
+
+      .hero-text p {
+        line-height: 1.9;
+        color: #666;
+        margin-bottom: 35px;
+        max-width: 650px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 15px 35px;
+        border-radius: 50px;
+        text-decoration: none;
+        background: linear-gradient(135deg, #d67c9b, #f0a9a9);
+        color: white;
+        font-weight: 600;
+        transition: 0.4s;
+        box-shadow: 0 10px 30px rgba(214, 124, 155, 0.3);
+      }
+
+      .btn:hover {
+        transform: translateY(-5px);
+      }
+
+      /* IMAGE */
+      .hero-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        min-width: 300px;
+      }
+
+      .image-box {
+        width: 350px;
+        height: 480px;
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        position: relative;
+      }
+
+      .image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .image-box::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, #00000050, transparent);
+      }
+
+      /* STORY */
+      .story {
+        padding: 120px 10%;
+        text-align: center;
+      }
+
+      .title {
+        font-family: "Playfair Display", serif;
+        font-size: 3.5rem;
+        margin-bottom: 15px;
+        color: #2d2d2d;
+      }
+
+      .title span {
+        color: #d67c9b;
+      }
+
+      .subtitle {
+        max-width: 700px;
+        margin: auto;
+        color: #777;
+        line-height: 1.8;
+        margin-bottom: 70px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+      }
+
+      .card {
+        background: white;
+        padding: 35px;
+        border-radius: 25px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: 0.4s;
+        text-align: left;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, #d67c9b, #f0a9a9);
+      }
+
+      .card h2 {
+        margin-bottom: 15px;
+        color: #d67c9b;
+      }
+
+      .card p {
+        color: #666;
+        line-height: 1.8;
+      }
+
+      /* FINAL */
+      .final {
+        padding: 120px 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .final-box {
+        background: white;
+        padding: 60px;
+        border-radius: 35px;
+        max-width: 900px;
+        text-align: center;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+      }
+
+      .final-box h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        color: #2d2d2d;
+      }
+
+      .final-box h1 span {
+        color: #d67c9b;
+      }
+
+      .final-box p {
+        line-height: 2;
+        color: #666;
+        font-size: 1.05rem;
+      }
+
+      /* FLOWERS */
+      .flower {
+        position: fixed;
+        top: -20px;
+        font-size: 20px;
+        animation: fall linear forwards;
+        opacity: 0.8;
+        pointer-events: none;
+      }
+
+      @keyframes fall {
+        to {
+          transform: translateY(110vh) rotate(360deg);
+        }
+      }
+
+      /* MUSIC */
+      .music {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 999;
+      }
+
+      .music button {
+        width: 60px;
+        height: 60px;
+        border: none;
+        border-radius: 50%;
+        background: #d67c9b;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+        box-shadow: 0 10px 25px rgba(214, 124, 155, 0.3);
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 900px) {
+        .hero {
+          flex-direction: column-reverse;
+          text-align: center;
+        }
+
+        .hero-text h1 {
+          font-size: 3rem;
+        }
+
+        .title,
+        .final-box h1 {
+          font-size: 2.5rem;
+        }
+
+        .image-box {
+          width: 300px;
+          height: 400px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg"></div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h3>HAPPY BIRTHDAY MAMA ❤️</h3>
+
+        <h1>
+          Untuk Wanita <span>Terhebat</span><br />
+          Dalam Hidupku
+        </h1>
+
+        <p>
+          Tidak ada kata yang cukup untuk menggambarkan betapa berharganya Mama
+          dalam hidupku. Terima kasih untuk semua cinta, pengorbanan, doa, dan
+          kasih sayang yang selalu Mama berikan tanpa batas.
+        </p>
+
+        <a href="#story" class="btn"> Buka Kenangan 🌸 </a>
+      </div>
+
+      <div class="hero-image">
+        <!-- GANTI FOTO -->
+        <div class="image-box">
+          <img src="foto_mama.webp" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="story" id="story">
+      <h1 class="title">Tentang <span>Mama</span> ✨</h1>
+
+      <p class="subtitle">
+        Sosok yang selalu ada, selalu menguatkan, dan selalu mencintai tanpa
+        meminta balasan.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h2>🤍 Kasih Sayang</h2>
+
+          <p>
+            Dari kecil sampai sekarang, Mama selalu menjadi tempat paling nyaman
+            untuk pulang. Pelukan Mama selalu berhasil menenangkan semua rasa
+            takut.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>🌸 Pengorbanan</h2>
+
+          <p>
+            Banyak hal yang mungkin tidak pernah aku sadari, tapi Mama selalu
+            berjuang demi kebahagiaan anak-anaknya. Terima kasih untuk semuanya.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>❤️ Doaku</h2>
+
+          <p>
+            Semoga Mama selalu sehat, panjang umur, bahagia, dan selalu berada
+            dalam lindungan Tuhan setiap harinya.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL -->
+    <section class="final">
+      <div class="final-box">
+        <h1>I Love You <span>Mama</span> ❤️</h1>
+
+        <p>
+          Aku mungkin tidak selalu bisa membalas semua kebaikan Mama, tapi aku
+          akan selalu berusaha membuat Mama bangga.
+          <br /><br />
+          Selamat ulang tahun Mama tersayang 🌷
+        </p>
+      </div>
+    </section>
+
+    <!-- MUSIC -->
+    <div class="music">
+      <button onclick="playMusic()">🎵</button>
+    </div>
+
+    <!-- AUDIO -->
+    <audio id="song" loop>
+      <source src="RipalBoy.wav" type="audio/mp3" />
+    </audio>
+
+    <script>
+      // MUSIC
+      function playMusic() {
+        const song = document.getElementById("song");
+
+        if (song.paused) {
+          song.play();
+        } else {
+          song.pause();
+        }
+      }
+
+      // FLOWER EFFECT
+      function createFlower() {
+        const flower = document.createElement("div");
+
+        flower.classList.add("flower");
+
+        flower.innerHTML = "🌸";
+
+        flower.style.left = Math.random() * 100 + "vw";
+
+        flower.style.fontSize = Math.random() * 20 + 15 + "px";
+
+        flower.style.animationDuration = Math.random() * 5 + 5 + "s";
+
+        document.body.appendChild(flower);
+
+        setTimeout(() => {
+          flower.remove();
+        }, 10000);
+      }
+
+      setInterval(createFlower, 400);
+    </script>
+  </body>
+</html>
